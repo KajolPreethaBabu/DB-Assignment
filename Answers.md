@@ -1,9 +1,10 @@
-1. Explain the relationship between the "Product" and "Product_Category" entities from the above diagram.
-Answer: The "Product" and "Product_Category" entities have a relationship defined by the "category_id" column in the "Product" table. This "category_id" column is an integer and serves as a foreign key, referencing the "id" column in the "Product_Category" table. This indicates that each product is associated with one product category, while each product category can have multiple products associated with it. In other words, the relationship between "Product" and "Product_Category" is a one-to-many relationship, with "Product_Category" being the "one" side and "Product" being the "many" side.
+**1. Explain the relationship between the "Product" and "Product_Category" entities from the above diagram.**
+	
+ The "Product" and "Product_Category" entities have a relationship defined by the "category_id" column in the "Product" table. This "category_id" column is an integer and serves as a foreign key, referencing the "id" column in the "Product_Category" table. This indicates that each product is associated with one product category, while each product category can have multiple products associated with it. In other words, the relationship between "Product" and "Product_Category" is a one-to-many relationship, with "Product_Category" being the "one" side and "Product" being the "many" side.
 
-
-2. How could you ensure that each product in the "Product" table has a valid category assigned to it?
-Answer: To ensure that each product in the "Product" table has a valid category assigned to it, we can implement a combination of database constraints. Here are some steps to achieve this:
+**2. How could you ensure that each product in the "Product" table has a valid category assigned to it?**
+	
+ To ensure that each product in the "Product" table has a valid category assigned to it, we can implement a combination of database constraints. Here are some steps to achieve this:
 
 **i) Foreign Key Constraint**
 Add a foreign key constraint on the "category_id" column in the "Product" table, referencing the "id" column in the "Product_Category" table. This will ensure that any value inserted into the "category_id" column in the "Product" table must exist in the "id" column of the "Product_Category" table.
