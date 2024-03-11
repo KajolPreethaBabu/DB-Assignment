@@ -4,6 +4,7 @@ Answer: The "Product" and "Product_Category" entities have a relationship define
 
 2. How could you ensure that each product in the "Product" table has a valid category assigned to it?
 Answer: To ensure that each product in the "Product" table has a valid category assigned to it, we can implement a combination of database constraints. Here are some steps to achieve this:
+
 **i) Foreign Key Constraint**
 Add a foreign key constraint on the "category_id" column in the "Product" table, referencing the "id" column in the "Product_Category" table. This will ensure that any value inserted into the "category_id" column in the "Product" table must exist in the "id" column of the "Product_Category" table.
 Example:
@@ -17,6 +18,7 @@ Example:
   ALTER TABLE product
   ADD CONSTRAINT chk_product_category_not_null
   CHECK (category_id IS NOT NULL);
+
 **iii) Database Triggers**
 Implement database triggers to enforce the constraint at the database level. The trigger checks if the "category_id" value exists in the "Product_Category" table before inserting the new product. If the "category_id" value does not exist, the trigger raises an error with the message "Invalid category_id: [category_id_value]".
 Example:
